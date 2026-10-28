@@ -1,4 +1,4 @@
-[0%]# { DARK V'S EREKIR PACKAGE PACK }
+# { DARK V'S EREKIR PACKAGE PACK }
 
 An Erekir mod that suppose to act like a DLC that adds Units and Turrets playable to use in your Erekir Campaign.
 
