@@ -5,6 +5,7 @@ An Erekir mod that suppose to act like a DLC that adds Units and Turrets playabl
 ## WHAT THIS MOD OFFERS:
 
 - Playable Unit Trees in your Campaign
+
 Plans from myself:
 Brawler [0%]
 Mechanic [0%]
@@ -18,6 +19,7 @@ None
 ## WHAT THIS MOD REFUSE:
 
 - Neoplasm
+
 I'm sorry, but i can't do that...
 
 # CREDITS:
