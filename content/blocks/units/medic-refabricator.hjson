@@ -1,0 +1,26 @@
+type: Reconstructor
+name: "Medic Refabricator"
+description: "Upgrades inputted medic to their second tier."
+health: 950
+size: 3
+regionSuffix: "-dark"
+consumes: {
+    power: 3
+    liquids: [ hydrogen/0.05 ]
+    items: [ silicon/70, tungsten/60, beryllium/60 ]
+}
+research: spawn-refabricator
+constructTime: 2700
+category: units
+requirements: [
+    silicon/180
+    tungsten/150
+    beryllium/150
+    oxide/35
+]
+
+upgrades: [
+[ remit, redress ]
+]
+
+shownPlanets: [ erekir ]

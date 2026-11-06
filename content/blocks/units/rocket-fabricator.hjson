@@ -1,0 +1,28 @@
+type: UnitFactory
+name: "Rocket Fabricator"
+description: "Constructs sway units. Outputted units can be used directly, or moved into refabricators for upgrading."
+health: 590
+size: 3
+fogRadius: 3
+configurable: false
+regionSuffix: "-dark"
+consumes: {
+    power: 1.5
+}
+research: brawl-fabricator
+category: units
+requirements: [
+    silicon/120
+    beryllium/220
+    graphite/80
+]
+
+plans: [
+{
+    unit: sway
+    time: 2400
+    requirements: [ silicon/40, beryllium/60 ]
+}
+]
+
+shownPlanets: [ erekir ]

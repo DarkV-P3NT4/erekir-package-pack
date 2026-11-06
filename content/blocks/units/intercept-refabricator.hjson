@@ -1,0 +1,26 @@
+type: Reconstructor
+name: "Intercept Refabricator"
+description: "Upgrades inputted intercept to their second tier."
+health: 950
+size: 3
+regionSuffix: "-dark"
+consumes: {
+    power: 3
+    liquids: [ hydrogen/0.05 ]
+    items: [ silicon/70, tungsten/40 ]
+}
+research: rocket-refabricator
+constructTime: 2400
+category: units
+requirements: [
+    silicon/180
+    tungsten/140
+    beryllium/180
+    graphite/100
+]
+
+upgrades: [
+[ wisp, shade ]
+]
+
+shownPlanets: [ erekir ]

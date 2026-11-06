@@ -1,0 +1,29 @@
+type: UnitFactory
+name: "Brawl Fabricator"
+description: "Constructs pummel units. Outputted units can be used directly, or moved into refabricators for upgrading."
+health: 685
+size: 3
+fogRadius: 3
+configurable: false
+regionSuffix: "-dark"
+consumes: {
+    power: 1.5
+}
+research: mech-fabricator
+category: units
+requirements: [
+    silicon/100
+    tungsten/50
+    beryllium/250
+    graphite/120
+]
+
+plans: [
+{
+    unit: pummel
+    time: 2100
+    requirements: [ silicon/50, tungsten/50 ]
+}
+]
+
+shownPlanets: [ erekir ]

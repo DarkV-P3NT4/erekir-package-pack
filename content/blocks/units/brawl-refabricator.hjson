@@ -1,0 +1,26 @@
+type: Reconstructor
+name: "Brawl Refabricator"
+description: "Upgrades inputted brawl to their second tier."
+health: 950
+size: 3
+regionSuffix: "-dark"
+consumes: {
+    power: 3
+    liquids: [ hydrogen/0.05 ]
+    items: [ silicon/60, tungsten/40 ]
+}
+research: mech-refabricator
+constructTime: 2550
+category: units
+requirements: [
+    silicon/150
+    tungsten/150
+    beryllium/200
+    oxide/40
+]
+
+upgrades: [
+[ pummel, batter ]
+]
+
+shownPlanets: [ erekir ]

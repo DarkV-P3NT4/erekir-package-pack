@@ -1,0 +1,25 @@
+type: Reconstructor
+name: "Rocket Refabricator"
+description: "Upgrades inputted rocket to their second tier."
+health: 950
+size: 3
+regionSuffix: "-dark"
+consumes: {
+    power: 3
+    liquids: [ hydrogen/0.05 ]
+    items: [ silicon/70, tungsten/50 ]
+}
+research: brawl-refabricator
+constructTime: 2700
+category: units
+requirements: [
+    silicon/175
+    tungsten/100
+    beryllium/300
+]
+
+upgrades: [
+[ sway, swivel ]
+]
+
+shownPlanets: [ erekir ]

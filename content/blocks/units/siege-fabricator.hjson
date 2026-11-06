@@ -1,0 +1,28 @@
+type: UnitFactory
+name: "Siege Fabricator"
+description: "Constructs vinea units. Outputted units can be used directly, or moved into refabricators for upgrading."
+health: 810
+size: 3
+fogRadius: 3
+configurable: false
+regionSuffix: "-dark"
+consumes: {
+    power: 1.5
+}
+research: medic-fabricator
+category: units
+requirements: [
+    silicon/150
+    beryllium/200
+    tungsten/40
+]
+
+plans: [
+{
+    unit: vinea
+    time: 2400
+    requirements: [ silicon/70, beryllium/60 ]
+}
+]
+
+shownPlanets: [ erekir ]

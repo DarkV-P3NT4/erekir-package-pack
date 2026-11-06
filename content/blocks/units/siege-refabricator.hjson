@@ -1,0 +1,26 @@
+type: Reconstructor
+name: "Siege Refabricator"
+description: "Upgrades inputted siege to their second tier."
+health: 950
+size: 3
+regionSuffix: "-dark"
+consumes: {
+    power: 3
+    liquids: [ hydrogen/0.05 ]
+    items: [ silicon/45, oxide/20, beryllium/80 ]
+}
+research: medic-refabricator
+constructTime: 2700
+category: units
+requirements: [
+    silicon/160
+    tungsten/120
+    beryllium/180
+    oxide/20
+]
+
+upgrades: [
+[ vinea, aries ]
+]
+
+shownPlanets: [ erekir ]

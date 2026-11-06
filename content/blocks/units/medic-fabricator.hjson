@@ -1,0 +1,28 @@
+type: UnitFactory
+name: "Medic Fabricator"
+description: "Constructs remit units. Outputted units can be used directly, or moved into refabricators for upgrading."
+health: 680
+size: 3
+fogRadius: 3
+configurable: false
+regionSuffix: "-dark"
+consumes: {
+    power: 1.5
+}
+research: spawn-fabricator
+category: units
+requirements: [
+    silicon/200
+    beryllium/250
+    tungsten/30
+]
+
+plans: [
+{
+    unit: remit
+    time: 2700
+    requirements: [ silicon/70, beryllium/90 ]
+}
+]
+
+shownPlanets: [ erekir ]

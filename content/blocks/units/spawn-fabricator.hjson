@@ -1,0 +1,29 @@
+type: UnitFactory
+name: "Spawn Fabricator"
+description: "Constructs nidus units. Outputted units can be used directly, or moved into refabricators for upgrading."
+health: 740
+size: 3
+fogRadius: 3
+configurable: false
+regionSuffix: "-dark"
+consumes: {
+    power: 1.5
+}
+research: intercept-fabricator
+category: units
+requirements: [
+    silicon/180
+    beryllium/300
+    tungsten/50
+    graphite/75
+]
+
+plans: [
+{
+    unit: nidus
+    time: 2250
+    requirements: [ silicon/60, beryllium/50 ]
+}
+]
+
+shownPlanets: [ erekir ]
