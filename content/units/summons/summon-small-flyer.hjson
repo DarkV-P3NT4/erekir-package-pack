@@ -1,0 +1,112 @@
+type: flying
+template: ErekirUnitType
+name: "Summon [Small Flyer]"
+description: "Fires homing bullets at enemy targets."
+
+health: 360
+armor: 2
+hitSize: 8
+outlineColor: 2D2D37
+speed: 1.8
+itemCapacity: 0
+drag: 0.1
+accel: 0.09
+rotateSpeed: 5
+engineSize: 0
+wobble: true
+flying: true
+hovering: true
+lowAltitude: false
+range: 134
+maxRange: 134
+playerControllable: false
+controller: FlyingAI
+hidden: true
+fogRadius: 0
+engineColor: 7C56A5
+
+engines: [
+{
+    x: 5.75
+    y: -5.75
+    radius: 2.25
+    rotation: -45
+}
+{
+    x: -5.75
+    y: -5.75
+    radius: 2.25
+    rotation: -135
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    shootSound: shootElude
+    shootCone: 7.5
+    rotate: false
+    mirror: false
+    inaccuracy: 60
+    recoil: 0
+    velocityRnd: 0.1
+    reload: 72
+    shootY: 0
+
+shoot: {
+    shots: 12
+    shotDelay: 2
+}
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 134
+    width: 6
+    height: 12
+    shrinkY: 0
+    shrinkX: 0.1
+    damage: 4
+    armorMultiplier: 0.5
+    speed: 4.8
+    lifetime: 32.5
+    homingPower: 0.15
+    homingDelay: 6
+    frontColor: FFFFFF
+    backColor: BCA0FF
+    hitColor: BCA0FF
+    trailColor: 7C56A5
+    trailLength: 16
+    trailWidth: 1.5
+    hitEffect: [ hitBulletColor, squareWaveEffect ]
+    despawnEffect: [ hitBulletColor, squareWaveEffect ]
+    shootEffect: sparkShoot
+    smokeEffect: none
+    recoil: 0.15
+}
+}
+{
+    x: 0
+    y: 0
+    mirror: false
+    reload: 2400
+    display: false
+    alwaysShooting: true
+    shootSound: none
+
+shoot: {
+    firstShotDelay: 2400
+}
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    despawnEffect: none
+    hitEffect: none
+}
+}
+]

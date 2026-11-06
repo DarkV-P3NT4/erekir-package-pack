@@ -1,0 +1,117 @@
+type: tank
+template: TankUnitType
+name: "Summon [Small Shielder]"
+description: "Fires standard bullets at ememy targets, Protects itself with a directional shield."
+health: 700
+armor: 5
+hitSize: 12
+treadPullOffset: 3
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 2D2D37
+speed: 0.75
+rotateSpeed: 2.5
+itemCapacity: 0
+tankMoveSound: tankMoveSmall
+tankMoveVolume: 0.4
+floorMultiplier: 0.9
+range: 156
+maxRange: 156
+playerControllable: false
+controller: GroundAI
+hidden: true
+
+fogRadius: 10
+
+treadRects: [
+{
+    x: -23
+    y: -29
+    width: 8
+    height: 21
+    }
+{
+    x: -19
+    y: 6
+    width: 8
+    height: 21
+    }
+]
+
+abilities: [
+{
+    type: ShieldArcAbility
+    radius: 32
+    angle: 90
+    max: 300
+    regen: 0.05
+    reflectTime: 0.7
+    chanceDeflect: 0.9
+    pushDiffLayer: false
+    whenShooting: false
+    region: "dvep-summon-small-shielder-shield"
+}
+]
+
+weapons: [
+{
+    name: "summon-small-shielder-weapon"
+    layerOffset: 0.001
+    x: 0
+    y: 0
+    mirror: false
+    rotate: true
+    rotateSpeed: 2.2
+    reload: 50
+    shootSound: shootStell
+    shake: 0.01
+    shootY: 4
+    cooldownTime: 30
+
+bullet: {
+    type: BasicBulletType
+    sprite: missile-large
+    width: 5
+    height: 7
+    hitSize: 4
+    lifetime: 40
+    speed: 4
+    damage: 30
+    frontColor: FFFFFF
+    backColor: BCA0FF
+    hitColor: BCA0FF
+    trailColor: 7C56A5
+    trailLength: 5
+    trailWidth: 1.7
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+}
+}
+{
+    x: 0
+    y: 0
+    mirror: false
+    reload: 2400
+    display: false
+    alwaysShooting: true
+    shootSound: none
+
+shoot: {
+    firstShotDelay: 2400
+}
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    despawnEffect: none
+    hitEffect: none
+}
+}
+]

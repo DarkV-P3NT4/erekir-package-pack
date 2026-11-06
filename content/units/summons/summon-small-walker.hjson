@@ -1,0 +1,103 @@
+type: legs
+template: ErekirUnitType
+name: "Summon [Small Walker]"
+description: "Fires sapping lasers at enemy targets. Can step over most terrain."
+
+health: 1050
+armor: 8
+hitSize: 14
+speed: 0.5
+rotateSpeed: 3
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: walkerStepSmall
+range: 60
+maxRange: 120
+stepShake: 0
+playerControllable: false
+controller: GroundAI
+hidden: true
+
+fogRadius: 15
+
+legCount: 6
+legLength: 18
+lockLegBase: true
+legContinuousMove: true
+legExtension: -2
+legGroupSize: 2
+legBaseOffset: 5
+legMaxLength: 1.25
+legMinLength: 0.1
+legLengthScl: 0.94
+legForwardScl: 1.4
+legStraightness: 0.25
+legMoveSpace: 0.85
+
+allowLegStep: true
+hovering: true
+shadowElevation: 0.15
+groundLayer: 69
+
+weapons: [
+{
+    name: summon-small-walker-weapon
+    x: 5.75
+    y: -3.25
+    mirror: true
+    rotate: true
+    rotateSpeed: 3
+    reload: 12
+    recoil: 1
+    shootCone: 2
+    shootSound: shootSap
+    soundPitchMin: 1
+    soundPitchMax: 1.2
+    shootY: 2.5
+
+bullet: {
+    type: SapBulletType
+    rangeOverride: 80
+    sapStrength: 0.3
+    length: 80
+    width: 0.5
+    damage: 20
+    shootEffect: shootSmallColor
+    smokeEffect: shootSmokeSquare
+    color: BCA0FF
+    hitColor: BCA0FF
+    despawnEffect: none
+    knockback: -0.5
+    lifetime: 24
+    status: none
+}
+}
+{
+    x: 0
+    y: 0
+    mirror: false
+    reload: 2400
+    display: false
+    alwaysShooting: true
+    shootSound: none
+
+shoot: {
+    firstShotDelay: 2400
+}
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    despawnEffect: none
+    hitEffect: none
+}
+}
+]
