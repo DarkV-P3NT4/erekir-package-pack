@@ -9,7 +9,7 @@ An Erekir mod that suppose to act like a DLC that adds Units and Turrets playabl
 Plans from myself:
 Brawl [80%]
 Rocket [60%]
-Intercept [60%]
+Intercept [40%]
 Spawn [60%]
 Medic [60%]
 Siege [60%]
