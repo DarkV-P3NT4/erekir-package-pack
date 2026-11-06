@@ -1,0 +1,87 @@
+type: missile
+physics: false
+template: MissileUnitType
+controller: MissileAI
+flying: true
+speed: 2.8
+accel: 1
+drag: 0
+hitSize: 7.75
+lifetime: 105
+useUnitCap: false
+rotateSpeed: 3
+health: 45
+homingDelay: 0
+deathSound: unitExplode1
+deathExplosionEffect: none
+drawMinimap: false
+isEnemy: false
+shadowElevation: 1
+engineSize: 3
+engineOffset: 6
+engineColor: 7390A6
+engineLayer: 110
+outlines: true
+hidden: true  
+lowAltitude: true
+outlineColor: 2D2D37
+aimDst: 8
+range: 2
+maxRange: 10
+knockbackMultiplier: 0
+trailColor: 7390A6
+trailLength: 24
+
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 361
+    shootSound: none
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    hitColor: E8F1F4
+    killShooter: true
+    splashDamage: 70
+    splashDamageRadius: 36
+    blockArmorMultiplier: 1.25
+    collidesGround: true
+    collidesAir: true
+    hitEffect: none
+    smokeEffect: vaporSmall
+    shootEffect: [ squareWaveEffect, hitSquaresColor,
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 38
+    strokeFrom: 5
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    interp: pow3Out
+    particles: 15
+    length: 40
+}
+   ]
+    lightningDamage: 10
+    lightning: 6
+    lightningColor: 7390A6
+    lightningLength: 8
+}
+    }
+]
