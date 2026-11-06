@@ -5,8 +5,8 @@ description: "An Erekir Mod that adds only Units and Turrets that may help your 
 
 {{ WHAT THIS MOD OFFERS }}
 - Playable Unit Trees to use for
-- Usable Turrets with their uses
-- Community Suggested Units or Turrets
+- Usable Turrets with their uses (Unfinished)
+- Community Suggested Units or Turrets (Nothing For Now)
 
 {{ WHAT THIS MOD REFUSE }}
 - Neoplasm (Sorry)
@@ -15,5 +15,6 @@ Play the whole package for free and knock yourself up!"
 
 subtitle: "Suggestions? Good to know!"
 version: "1.0"
+repo: DarkV-P3NT4/erekir-package-pack
 minGameVersion: 156
 hidden: false
