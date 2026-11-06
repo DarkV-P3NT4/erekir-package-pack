@@ -1,0 +1,94 @@
+type: mech
+template: ErekirUnitType
+name: "T3 Summon Pad"
+description: "Summons Small Flyers, Small Walkers, and Small Shielders, Has a lifetime"
+
+health: 2000
+hitSize: 26
+speed: 0
+rotateSpeed: 0
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: none
+knockbackMultiplier: 0
+fogRadius: 0
+hidden: true
+playerControllable: false
+physics: false
+loopSound: loopUnitBuilding
+loopSoundVolume: 0.3
+
+groundLayer: 40
+
+abilities: [
+{
+    type: UnitSpawnAbility
+    unit: summon-small-flyer
+    spawnTime: 600
+    spawnEffect: {
+    type: SoundEffect
+    sound: unitCreate
+    effect: spawn 
+}
+}
+{
+    type: UnitSpawnAbility
+    unit: summon-small-shielder
+    spawnTime: 1200
+    spawnEffect: {
+    type: SoundEffect
+    sound: unitCreate
+    effect: spawn 
+}
+}
+{
+    type: UnitSpawnAbility
+    unit: summon-small-walker
+    spawnTime: 900
+    spawnEffect: {
+    type: SoundEffect
+    sound: unitCreate
+    effect: spawn 
+}
+}
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: charge
+    color: 00000000
+    colorTo: BCA0FF
+    blending: additive
+    outline: false
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    mirror: false
+    reload: 3610
+    display: false
+    alwaysShooting: true
+    shootSound: explosionCrawler
+
+shoot: {
+    firstShotDelay: 3610
+}
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    despawnEffect: none
+    hitEffect: none
+}
+}
+]
