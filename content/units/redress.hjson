@@ -1,0 +1,144 @@
+type: flying
+template: ErekirUnitType
+name: "Redress"
+description: "Fires unstable orbs at enemy targets. Can heal structures with a beam."
+
+health: 900
+armor: 5
+hitSize: 11
+outlineColor: 2D2D37
+speed: 2.2
+itemCapacity: 0
+drag: 0.1
+accel: 0.09
+rotateSpeed: 5
+engineSize: 0
+wobble: true
+flying: true
+hovering: true
+lowAltitude: true
+range: 126
+maxRange: 126
+fogRadius: 15
+
+research: medic-refabricator
+researchCostMultiplier: 0
+
+engines: [
+{
+    x: 8
+    y: -8
+    radius: 2.5
+    rotation: -45
+}
+{
+    x: -8
+    y: -8
+    radius: 2.5
+    rotation: -135
+}
+{
+    x: 6
+    y: 1
+    radius: 2.5
+    rotation: 0
+}
+{
+    x: -6
+    y: 1
+    radius: 2.5
+    rotation: -180
+}
+]
+
+weapons: [
+{
+    name: redress-weapon
+    x: 5.5
+    y: 2
+    shootSound: shootRedress
+    shootCone: 7.5
+    rotate: true
+    rotateSpeed: 3
+    mirror: true
+    inaccuracy: 2.5
+    recoil: 0
+    velocityRnd: 0.1
+    reload: 48
+    shootY: 2.5
+    controllable: false
+    autoTarget: true
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 126
+    sprite: "large-orb"
+    width: 10
+    height: 10
+    hitSize: 7
+    shrinkY: 0.05
+    shrinkX: 0.05
+    damage: 6
+    splashDamage: 24
+    splashDamageRadius: 32
+    speed: 3.5
+    lifetime: 36
+    homingPower: 0.09
+    homingDelay: 3
+    frontColor: FFFFFF
+    backColor: C3FFB2
+    hitColor: C3FFB2
+    trailColor: 519371
+    trailLength: 24
+    trailWidth: 2.5
+    trailEffect: missileTrail
+    trailInterval: 4
+    hitEffect: [ squareWaveEffect, hitSquaresColor ]
+    despawnEffect: [ squareWaveEffect, hitSquaresColor ]
+    shootEffect: [ sparkShoot, shootBigColor ]
+    smokeEffect: shootBigSmoke
+
+    fragBullets: 6
+    fragVelocityMin: 1
+    fragOnAbsorb: false
+    fragSpread: 60
+    fragRandomSpread: 0
+
+fragBullet: {
+    type: ShrapnelBulletType
+    fromColor: C3FFB2
+    toColor: C3FFB2
+    hitColor: C3FFB2
+    length: 32
+    width: 6
+    damage: 4
+    knockback: 1.5
+    buildingDamageMultiplier: 0.8
+    lifetime: 20
+    hitEffect: [ hitLancer, hitSquaresColor ]
+    serrations: 0
+}
+}
+}
+{
+    type: RepairBeamWeapon
+    x: 0
+    y: 7.5
+    reload: 20
+    rotate: false
+    shootY: 0
+    widthSinMag: 0.11
+    laserColor: C3FFB2
+    healColor: C3FFB2
+    beamWidth: 0.68
+    targetBuildings: true
+    targetUnits: false
+    mirror: false
+    fractionRepairSpeed: 0.06
+    repairSpeed: 0.775
+
+bullet: {
+    maxRange: 100
+}
+}
+]

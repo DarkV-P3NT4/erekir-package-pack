@@ -1,0 +1,104 @@
+type: mech
+template: ErekirUnitType
+name: "Batter"
+description: "Hits stronger punches at enemy targets and causing them to stagger, Capable of dashing."
+details: "Same same... but slightly bigger."
+
+health: 2000
+armor: 9
+hitSize: 20
+speed: 0.8
+rotateSpeed: 3.25
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: mechStepSmall
+range: 32
+maxRange: 120
+drag: 0.24
+
+immunities: [ burning, melting ]
+
+researchCostMultiplier: 0
+research: brawl-refabricator
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: artilleryTrailSmoke
+    x: 0
+    y: 0
+    interval: 1
+    minVelocity: 0.9
+  }
+]
+
+weapons: [
+{
+    name: batter-weapon
+    x: 9
+    y: 2
+    top: false
+    mirror: true
+    rotate: false
+    reload: 90
+    recoil: -4
+    shootCone: 90
+    shootSound: brawlSwing1
+    shootSoundVolume: 0.75
+    shootY: 4
+    heatColor: F25555
+
+bullet: {
+    type: ShrapnelBulletType
+    rangeOverride: 32
+    keepVelocity: false
+    lifetime: 10
+    speed: 0
+    serrations: 0
+    reflectable: false
+    damage: 200
+    knockback: 6.5
+    impact: true
+    length: 32
+    width: 16
+    hitSound: brawlPunch2
+    despawnEffect: none
+    hitEffect: [ hitBulletColor, hitSquaresColor ]
+    fromColor: F25555FF
+    toColor: F25555FF
+    hitColor: F25555FF
+    shootEffect: none
+    smokeEffect: none
+    recoil: -1
+}
+}
+{
+    x: 0
+    y: 0
+    mirror: false
+    reload: 300
+    autoTarget: true
+    controllable: false
+    shootSound: dashMove1
+    soundPitchMin: 0.6
+    soundPitchMax: 0.9
+    rotate: false
+    shootCone: 2.5
+    display: false
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 120
+    instantDisappear: true
+    damage: 0
+    recoil: -15
+    shootEffect: none
+    smokeEffect: none
+}
+}
+]

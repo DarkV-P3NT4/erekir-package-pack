@@ -1,0 +1,97 @@
+type: tank
+template: TankUnitType
+name: "Aries"
+description: "Fires dense shells at enemy targets, Deals massive damage to structures."
+health: 2200
+armor: 8
+hitSize: 18
+treadPullOffset: 3
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 2D2D37
+speed: 0.625
+rotateSpeed: 2.25
+itemCapacity: 0
+tankMoveSound: tankMoveSmall
+tankMoveVolume: 0.55
+floorMultiplier: 0.8
+range: 148
+maxRange: 148
+crushFragile: true
+targetAir: false
+
+fogRadius: 18.5
+
+researchCostMultiplier: 0
+research: siege-refabricator
+
+treadRects: [
+{
+    x: -30
+    y: -38
+    width: 16
+    height: 21
+    }
+{
+    x: -30
+    y: 17
+    width: 16
+    height: 21
+    }
+]
+
+weapons: [
+{
+    name: aries-weapon
+    layerOffset: 0.001
+    x: 0
+    y: 0
+    mirror: false
+    shootSound: shootAries
+    shootCone: 1
+    reload: 120
+    recoil: 1.5
+    cooldownTime: 130
+    rotate: true
+    rotateSpeed: 2.75
+    shootY: 8
+    shake: 1
+    heatColor: F25555
+
+bullet: {
+    type: BasicBulletType
+    sprite: shell
+    collidesAir: false
+    shrinkY: 0.4
+    shrinkX: 0.2
+    shrinkInterp: slope
+    width: 12
+    height: 14
+    damage: 210
+    speed: 3.2
+    lifetime: 46.25
+    knockback: 10
+    impact: true
+    buildingDamageMultiplier: 4
+    blockArmorMultiplier: 0
+    status: slow
+    statusDuration: 60
+    statusChance: 0.8
+    frontColor: FFFFFF
+    backColor: CEFFF8
+    hitColor: CEFFF8
+    trailColor: 60949B
+    trailLength: 16
+    trailInterp: slope
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke2
+    hitEffect: [ hitBulletBig, flakExplosion, hitSquaresColor ]
+    despawnEffect: [ hitBulletColor, explosion ]
+    hitSound: explosionDull
+    despawnSound: explosionArtillery
+    hitShake: 2.5
+    despawnShake: 2.5
+}
+}
+]

@@ -1,0 +1,237 @@
+type: mech
+template: ErekirUnitType
+name: "Bludgeon"
+description: "Unleashes powerful blows with extended reach, Deals more damage on closer range, Capable of dashing with powerful strikes."
+
+health: 10000
+armor: 18
+hitSize: 28
+speed: 0.5
+rotateSpeed: 2
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: mechStep
+range: 76
+maxRange: 180
+drag: 0.24
+
+fogRadius: 22.5
+
+immunities: [ burning, melting ]
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: artilleryTrailSmoke
+    x: 0
+    y: 0
+    interval: 1
+    minVelocity: 0.9
+  }
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: shockwave
+    x: 0
+    y: 0
+    interval: 1
+    minVelocity: 0.9
+  }
+]
+
+weapons: [
+{
+    name: bludgeon-weapon
+    x: 0
+    y: 0
+    top: false
+    mirror: true
+    rotate: false
+    reload: 135
+    recoil: -12
+    recoilTime: 45
+    recoilPow: 3.5
+    shootCone: 90
+    shootSound: brawlSwing2
+    shootSoundVolume: 1.5
+    shootX: 8
+    shootY: 12
+    shootWarmupSpeed: 0.08
+    minWarmup: 0.94
+    smoothReloadSpeed: 0.15
+
+shoot: {
+    firstShotDelay: 15
+}
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-shoulder"
+    x: 16
+    y: -8.5
+    heatColor: F25555
+    progress: warmup
+    moveRot: -45
+    moves: [
+    {
+    type: PartMove
+    rot: -45
+    progress: charge
+    }
+    {
+    type: PartMove
+    rot: 60
+    progress: recoil
+    }
+    ]
+    children: [
+      {
+      type: RegionPart
+      suffix: "-arm"
+      layerOffset: -0.0001
+      under: true
+      heatColor: F25555
+      x: -0.5
+      y: 12.75
+      progress: warmup
+      moveRot: 15
+      moves: [
+      {
+      type: PartMove
+      rot: -30
+      progress: charge
+      }
+      {
+      type: PartMove
+      rot: 15
+      progress: recoil
+      }
+      ]
+    }
+    ]
+}
+]
+
+bullet: {
+    type: ShrapnelBulletType
+    rangeOverride: 76
+    lifetime: 10
+    speed: 0
+    reflectable: false
+    serrations: 0
+    length: 64
+    width: 16
+    damage: 263.75
+    knockback: 25
+    impact: true
+    hitSound: brawlPunch3
+    despawnSound: none
+    shootEffect: none
+    smokeEffect: none
+    fromColor: F25555FF
+    toColor: F25555FF
+    hitColor: F25555FF
+    trailColor: F25555FF
+    hitEffect: [ hitSquaresColor, colorSpark, hitBulletBig ]
+    despawnEffect: none
+    status: burning
+    statusDuration: 360
+    statusChance: 0.3
+
+spawnBullets: [
+{
+    type: ShrapnelBulletType
+    lifetime: 10
+    speed: 0
+    serrations: 0
+    reflectable: false
+    length: 28
+    width: 16
+    damage: 791.25
+    knockback: 25
+    impact: true
+    hitSound: savageBlow
+    hitSoundVolume: 0.5
+    despawnSound: none
+    fromColor: F25555FF
+    toColor: F25555FF
+    hitColor: F25555FF
+    trailColor: F25555FF
+    hitEffect: [ blastExplosion, massiveExplosion, scatheSlash,
+{
+    type: WaveEffect
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    sizeFrom: 0
+    sizeTo: 68
+    strokeFrom: 2.5
+    strokeTo: 0
+    lifetime: 30
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    sizeInterp: pow2In
+    region: large-bomb-back
+    interp: pow3Out
+    spin: 4
+    sizeFrom: 4
+    sizeTo: 0
+    sizeChangeStart: 24
+    lifetime: 30
+    particles: 12
+    length: 72
+}
+    ]
+    despawnEffect: none
+}
+    ]
+}
+}
+{
+    x: 0
+    y: 0
+    mirror: false
+    reload: 660
+    autoTarget: true
+    controllable: false
+    shootSound: dashMove2
+    rotate: false
+    shootCone: 2.5
+    display: false
+    chargeSound: dashCharge
+    shootStatus: slow
+    shootStatusDuration: 78
+
+shoot: {
+    firstShotDelay: 80
+}
+
+bullet: {
+    type: ShrapnelBulletType
+    rangeOverride: 110
+    fromColor: F25555FF
+    toColor: F25555FF
+    hitColor: F25555FF
+    damage: 110
+    length: 108
+    width: 28
+    recoil: -25
+    status: burning
+    statusDuration: 360
+    statusChance: 0.5
+    shootEffect: none
+    smokeEffect: none
+    hitEffect: scatheSlash
+    despawnEffect: none
+}
+}
+]

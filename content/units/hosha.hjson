@@ -1,0 +1,146 @@
+type: tank
+template: TankUnitType
+name: "Hosha"
+description: "Fires a large swarm of missiles at enemy targets, Deals massive damage to structures."
+health: 3850
+armor: 10
+hitSize: 24
+treadPullOffset: 3
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 2D2D37
+speed: 0.5
+rotateSpeed: 2
+itemCapacity: 0
+tankMoveSound: tankMove
+tankMoveVolume: 0.55
+floorMultiplier: 0.65
+range: 228
+maxRange: 228
+crushFragile: true
+targetAir: true
+
+fogRadius: 18.5
+
+researchCostMultiplier: 10
+research: prime-refabricator
+
+treadRects: [
+  [-42, -53, 17, 45],
+  [-29,  32, 17, 21]
+]
+
+weapons: [
+{
+    name: hosha-weapon
+    layerOffset: 0.001
+    x: 0
+    y: -2.25
+    mirror: false
+    shootSound: shootHosha
+    shootSoundVolume: 0.8
+    chargeSound: chargeHosha
+    shootCone: 2.5
+    reload: 990
+    recoil: 1.5
+    recoilTime: 20
+    recoilPow: 5
+    cooldownTime: 240
+    rotate: true
+    rotateSpeed: 1.5
+    shootY: 7
+    shake: 2
+    inaccuracy: 20
+    heatColor: FF0000
+    shootStatus: unmoving
+    shootStatusDuration: 270
+
+shoot: {
+    type: ShootAlternate
+    barrels: 3
+    spread: 3.5
+    shots: 80
+    shotDelay: 3
+    firstShotDelay: 270
+}
+
+parts: [
+    {
+      type: HaloPart
+      progress: charge
+      layer: 110
+      color: CEFFF8
+      y: 6
+      haloRotateSpeed: 5
+      sides: 3
+      shapes: 12
+      haloRadius: 80
+      haloRadiusTo: 3
+      tri: true
+      triLength: 0
+      triLengthTo: 4
+      radius: 0
+      radiusTo: 4
+      hollow: true
+    }
+      {
+      type: ShapePart
+      progress: charge
+      y: 6
+      radius: 80
+      radiusTo: 3
+      stroke: 0
+      strokeTo: 1
+      layer: 110
+      circle: true
+      hollow: true
+      color: CEFFF8
+    }
+]
+
+bullet: {
+    type: BasicBulletType
+    sprite: missile
+    shrinkY: 0.2
+    width: 10
+    height: 16
+    damage: 32
+    splashDamage: 16
+    splashDamageRadius: 32
+    speed: 5.7
+    lifetime: 40
+    buildingDamageMultiplier: 2
+    blockArmorMultiplier: 0.5
+    status: slow
+    statusDuration: 160
+    statusChance: 0.05
+    homingPower: 0.07
+    homingDelay: 6
+    frontColor: FFFFFF
+    backColor: CEFFF8
+    hitColor: CEFFF8
+    trailColor: 60949B
+    trailLength: 12
+    shootEffect: shootBigColor
+    smokeEffect: shootSmokeTitan
+    hitEffect: [ sparkShoot, squareWaveEffect, hitSquaresColor,
+{
+    type: WaveEffect
+    sizeFrom: 2
+    sizeTo: 35
+    colorFrom: CEFFF8
+    colorTo: CEFFF8
+    strokeFrom: 3.5
+    strokeTo: 0
+    interp: pow3Out
+    lifetime: 12
+}
+]
+    hitSound: explosion
+    despawnSound: explosion
+    hitShake: 2.5
+    despawnShake: 2.5
+}
+}
+]

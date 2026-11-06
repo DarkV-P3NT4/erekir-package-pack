@@ -1,0 +1,157 @@
+type: legs
+template: ErekirUnitType
+name: "Streamer"
+description: "Fires armored missiles at enemy targets, missiles can be shot down, Can step over most terrain."
+
+health: 2600
+armor: 6
+hitSize: 23
+speed: 0.67
+rotateSpeed: 2.85
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: walkerStepSmall
+stepSoundPitch: 0.8
+maxRange: 294
+stepShake: 0.24
+drag: 0.1
+softShadowScl: 4
+drawCell: false
+
+legCount: 4
+legLength: 22
+lockLegBase: true
+legContinuousMove: true
+legExtension: -2.5
+legBaseOffset: 8
+legMaxLength: 1.5
+legMinLength: 0.5
+legLengthScl: 0.97
+legForwardScl: 1.1
+legMoveSpace: 0.85
+
+allowLegStep: true
+hovering: true
+shadowElevation: 0.2
+groundLayer: 80
+
+fogRadius: 36.75
+
+alwaysShootWhenMoving: true
+
+research: prime-refabricator
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: warmup
+    color: 00000000
+    colorTo: E8F1F4FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+weapons: [
+{
+    name: "streamer-weapon"
+    layerOffset: 0.001
+    x: 0
+    y: 0
+    shootSound: shootMissileSmall
+    shootY: -0.25
+    inaccuracy: 30
+    reload: 180
+    shootCone: 3
+    rotate: false
+    mirror: false
+    heatColor: E8F1F4
+    shootWarmupSpeed: 0.04
+    minWarmup: 0.95
+    smoothReloadSpeed: 0.15
+    shootStatus: slow
+    shootStatusDuration: 210
+    cooldownTime: 180
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-part-missile"
+    progress: warmup
+    layerOffset: -0.0001
+    under: true
+    moveY: 6
+    moves: [
+{
+      type: PartMove
+      progress: reload
+      y: -4
+}
+    ]
+}
+{
+    type: RegionPart
+    suffix: "-maw"
+    mirror: true
+    under: true
+    progress: warmup
+    heatColor: E8F1F4
+    moveX: 1.5
+    moves: [
+{
+      type: PartMove
+      progress: recoil
+      x: 1
+}
+    ]
+}
+]
+
+shoot: {
+    shotDelay: 20
+    shots: 4
+}
+
+bullet: {
+    instantDisappear: true
+    rangeOverride: 294
+    keepVelocity: false
+    speed: 0
+    spawnUnit: streamer-missile
+    hitColor: E8F1F4
+    despawnEffect: none
+    hitEffect: none
+    shootEffect: [ shootBigColor, artilleryTrailSmoke
+{
+    type: WaveEffect
+    colorFrom: E8F1F4
+    colorTo: 7390A6
+    sizeFrom: 0
+    sizeTo: 12
+    strokeFrom: 1
+    strokeTo: 0
+    lifetime: 12
+    }
+]
+    smokeEffect: {
+    type: ParticleEffect
+    particles: 18
+    length: 38
+    cone: 25
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    interp: pow3Out
+    sizeInterp: smooth
+    sizeFrom: 3.5
+    sizeTo: 0
+    lifetime: 24
+}
+}
+}
+]

@@ -1,0 +1,140 @@
+type: mech
+template: ErekirUnitType
+name: "Matrix"
+description: "Fires piercing bullets at enemy targets, Constructs a stationary pad on its location."
+
+health: 1800
+armor: 4
+hitSize: 16
+speed: 0.685
+rotateSpeed: 3.5
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: mechStepSmall
+range: 156
+maxRange: 156
+
+fogRadius: 19.5
+
+researchCostMultiplier: 0
+research: spawn-refabricator
+
+weapons: [
+{
+    name: matrix-weapon
+    x: 13.75
+    y: 3.75
+    top: false
+    mirror: true
+    rotate: false
+    reload: 45
+    recoil: 2
+    cooldownTime: 45
+    shootCone: 15
+    shootSound: shootDisperse
+    soundPitchMin: 0.6
+    soundPitchMax: 0.9
+    shootY: 6.5
+    inaccuracy: 1.5
+    heatColor: BCA0FF
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 152
+    width: 10
+    height: 14
+    hitSize: 6
+    shrinkY: 0.1
+    shrinkX: 0.2
+    damage: 56.75
+    speed: 7.5
+    lifetime: 20.8
+    pierce: true
+    pierceCap: 3
+    frontColor: FFFFFF
+    backColor: BCA0FF
+    hitColor: BCA0FF
+    trailColor: 7C56A5
+    trailLength: 16
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    shootEffect: [ shootBigColor, colorSparkBig ]
+    smokeEffect: shootBigSmoke2
+}
+}
+{
+    x: 0
+    y: -2.5
+    shootY: -2.5
+    chargeSound: placingPad
+    shootSound: blockPlace1
+    shootCone: 361
+    reload: 3600
+    recoil: 0
+    controllable: false
+    autoTarget: true
+    mirror: false
+    rotate: false
+    useAttackRange: false
+    shootStatus: slow
+    shootStatusDuration: 90
+    soundPitchMin: 0.8
+    soundPitchMax: 0.95
+
+shoot: {
+    firstShotDelay: 90
+}
+
+bullet: {
+    instantDisappear: true
+    rangeOverride: 280
+    speed: 0
+    spawnUnit: summoning-pad-tier2
+    shootEffect: [
+{
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 20
+    sizeTo: 16
+    strokeFrom: 4.5
+    strokeTo: 0
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    interp: pow2In
+    lifetime: 30
+}
+{
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 4
+    sizeTo: 24
+    strokeFrom: 10
+    strokeTo: 0
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    lifetime: 6
+}
+]
+    smokeEffect: none
+    chargeEffect: {
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 52
+    sizeTo: 16
+    strokeFrom: 3
+    strokeTo: 1
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    interp: exp5Out
+    lifetime: 90
+}
+}
+}
+]

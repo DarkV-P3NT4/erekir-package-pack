@@ -1,0 +1,191 @@
+type: mech
+template: ErekirUnitType
+name: "Thump"
+description: "Swings punches at close range repeatedly, Each successful punch has a chance to do Savage Blow, Capable of doing a signature smash attack."
+details: "Oh how original... I never seen that before."
+
+health: 4750
+armor: 11
+hitSize: 22
+speed: 0.7
+rotateSpeed: 2.85
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: mechStepSmall
+range: 40
+maxRange: 140
+drag: 0.24
+
+fogRadius: 17.5
+
+immunities: [ burning, melting ]
+
+research: prime-refabricator
+
+weapons: [
+{
+    name: thump-weapon
+    x: 12.5
+    y: 2.75
+    top: false
+    mirror: true
+    rotate: false
+    reload: 45
+    recoil: -2.75
+    shootCone: 90
+    shootSound: brawlSwing2
+    shootSoundVolume: 0.9
+    shootY: 7.5
+    heatColor: F25555
+
+bullet: {
+    type: ShrapnelBulletType
+    rangeOverride: 40
+    keepVelocity: false
+    lifetime: 10
+    speed: 0
+    serrations: 0
+    reflectable: false
+    damage: 60
+    knockback: 1.5
+    impact: true
+    length: 36
+    width: 16
+    hitSound: brawlPunch2
+    despawnEffect: none
+    hitEffect: [ hitBulletColor, hitSquaresColor ]
+    fromColor: F25555FF
+    toColor: F25555FF
+    hitColor: F25555FF
+    shootEffect: none
+    smokeEffect: none
+    recoil: -0.15
+
+spawnBullets: [
+{
+    type: ShrapnelBulletType
+    createChance: 0.1
+    lifetime: 10
+    speed: 0
+    serrations: 4
+    pierceCap: 1
+    reflectable: false
+    damage: 540
+    knockback: 30
+    impact: true
+    length: 36
+    width: 16
+    buildingDamageMultiplier: 1.5
+    hitSound: savageBlow
+    despawnEffect: none
+    status: slow
+    statusDuration: 60
+    hitEffect: [
+{
+    type: WaveEffect
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    sizeFrom: 0
+    sizeTo: 24
+    strokeFrom: 2.5
+    strokeTo: 0
+    lifetime: 30
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    sizeInterp: pow2In
+    region: large-bomb-back
+    interp: pow3Out
+    spin: 4
+    sizeFrom: 4
+    sizeTo: 0
+    sizeChangeStart: 24
+    lifetime: 30
+    particles: 12
+    length: 40
+}
+    ]
+    fromColor: F25555FF
+    toColor: F25555FF
+    hitColor: F25555FF
+    recoil: -0.3
+}
+]
+}
+}
+{
+    name: thump-aoe
+    x: 0
+    y: 0
+    heatColor: F25555FF
+    cooldownTime: 300
+    reload: 600
+    recoil: 0
+    controllable: false
+    autoTarget: true
+    shootCone: 361
+    shootSound: aoeSmash
+    chargeSound: shootSpectre
+    shootStatus: unmoving
+    shootStatusDuration: 60
+
+shoot: {
+    firstShotDelay: 30
+}
+
+bullet: {
+    type: BasicBulletType
+    instantDisappear: true
+    collidesAir: false
+    rangeOverride: 40
+    hitColor: 7F7F7FFF
+    damage: 0
+    splashDamage: 180
+    splashDamageRadius: 120
+    scaledSplashDamage: true
+    knockback: 8
+    status: slow
+    statusChance: 0.5
+    lifetime: 0
+    shootEffect: none
+    smokeEffect: none
+    hitEffect: none
+    despawnEffect: [
+{
+    type: WaveEffect
+    colorFrom: 7F7F7FFF
+    colorTo: 7F7F7FFF
+    sizeFrom: 0
+    sizeTo: 120
+    strokeFrom: 2
+    strokeTo: 0
+    lifetime: 30
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    line: true
+    particles: 20
+    colorFrom: 7F7F7FFF
+    colorTo: 7F7F7FFF
+    strokeFrom: 3
+    strokeTo: 0
+    lenFrom: 12
+    lenTo: 15
+    sizeFrom: 4
+    sizeTo: 4.5
+    length: 140
+    lifetime: 36
+    interp: pow3Out
+}
+    ]
+}
+}
+]

@@ -1,0 +1,97 @@
+type: tank
+template: TankUnitType
+name: "Vinea"
+description: "Batters enemy targets with a piston, Deals massive damage to structures."
+health: 900
+armor: 6
+hitSize: 12
+treadPullOffset: 0
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 2D2D37
+speed: 0.75
+rotateSpeed: 2.5
+itemCapacity: 0
+tankMoveSound: tankMoveSmall
+tankMoveVolume: 0.35
+floorMultiplier: 0.95
+range: 20
+maxRange: 120
+
+fogRadius: 15
+
+researchCostMultiplier: 0
+research: siege-fabricator
+
+treadRects: [
+{
+    x: -19
+    y: -26
+    width: 12
+    height: 52
+    }
+]
+
+weapons: [
+{
+    name: "vinea-weapon"
+    layerOffset: 0.001
+    x: 0
+    y: 0
+    mirror: false
+    rotate: true
+    rotateSpeed: 2.75
+    reload: 25
+    shootSound: shootRam
+    shootSoundVolume: 0.8
+    shake: 0.2
+    predictTarget: false
+    shootY: 4
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-piston"
+    under: true
+    progress: charge
+    moveY: -0.5
+    moves: [
+    {
+    type: PartMove
+    progress: recoil
+    y: 5
+    }
+    ]
+}
+]
+
+shoot: {
+    firstShotDelay: 12
+}
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 20
+    shrinkY: 0
+    width: 8
+    height: 6
+    lifetime: 2.5
+    speed: 8
+    damage: 15
+    knockback: 2.5
+    impact: true
+    buildingDamageMultiplier: 3
+    blockArmorMultiplier: 0.25
+    shootEffect: none
+    smokeEffect: shootBigSmoke2
+    frontColor: FFFFFF
+    backColor: CEFFF8
+    hitColor: CEFFF8
+    hitEffect: [ hitBulletColor, hitBulletBig, hitLancer ]
+    despawnEffect: none
+    hitSound: hitRam
+    recoil: 0.1
+}
+}
+]

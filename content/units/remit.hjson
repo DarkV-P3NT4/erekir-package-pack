@@ -1,0 +1,144 @@
+type: hover
+template: ErekirUnitType
+name: "Remit"
+description: "Fires pathetic homing bolts at enemy targets, Capable of repairing."
+
+health: 480
+armor: 1
+hitSize: 11
+speed: 1.8
+rotateSpeed: 5
+faceTarget: true
+targetAir: true
+targetGround: true
+drag: 0.07
+accel: 0.09
+outlineColor: 2D2D37
+itemCapacity: 0
+range: 140
+maxRange: 140
+
+stepSound: none
+moveSound: loopExtract
+moveSoundVolume: 0.7
+moveSoundPitchMin: 0.75
+moveSoundPitchMax: 1.5
+
+hovering: true
+canDrown: false
+shadowElevation: 0.11
+engineSize: 2.5
+engineOffset: 7
+useEngineElevation: false
+
+researchCostMultiplier: 0
+research: medic-fabricator
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: missileTrailShort
+    x: 0
+    y: -7
+    interval: 2
+    minVelocity: 0.1
+  }
+]
+
+parts: [
+{
+    type: HoverPart
+    color: C3FFB2
+    radius: 6
+    sides: 4
+    layerOffset: -0.001
+    mirror: true
+    x: 3.75
+    y: 3.5
+    phase: 80
+    stroke: 2.25
+    }
+{
+    type: HoverPart
+    color: C3FFB2
+    radius: 6
+    sides: 4
+    layerOffset: -0.001
+    mirror: true
+    x: 3.75
+    y: -2.75
+    phase: 80
+    stroke: 2.25
+    }
+]
+
+weapons: [
+{
+    name: remit-weapon
+    x: 5
+    y: -2.5
+    mirror: true
+    rotate: false
+    reload: 38
+    baseRotation: -45
+    recoil: 1.5
+    shootCone: 361
+    shootSound: shootRemit
+    shootSoundVolume: 0.5
+    shootY: 3.5
+
+shoot: {
+    type: ShootSpread
+    spread: 4
+    shots: 3
+    shotDelay: 2
+}
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 140
+    width: 8
+    height: 16
+    shrinkY: 0
+    shrinkX: -0.1
+    hitSize: 5
+    damage: 6
+    speed: 6.4
+    lifetime: 23.75
+    homingPower: 0.21
+    homingDelay: 2
+    frontColor: FFFFFF
+    backColor: C3FFB2
+    hitColor: C3FFB2
+    trailColor: 519371
+    trailLength: 12
+    trailWidth: 1.5
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    shootEffect: shootSmallColor
+    smokeEffect: shootSmallSmoke
+}
+}
+{
+    type: RepairBeamWeapon
+    x: 0
+    y: 7.5
+    reload: 20
+    rotate: false
+    shootY: 0
+    widthSinMag: 0.11
+    laserColor: C3FFB2
+    healColor: C3FFB2
+    beamWidth: 0.68
+    targetBuildings: true
+    targetUnits: false
+    mirror: false
+    fractionRepairSpeed: 0.06
+    repairSpeed: 0.3875
+
+bullet: {
+    maxRange: 100
+}
+}
+]

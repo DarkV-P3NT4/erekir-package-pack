@@ -1,0 +1,173 @@
+type: legs
+template: ErekirUnitType
+name: "Sway"
+description: "Fires long ranged missiles at enemy targets, Can step over most terrain."
+
+health: 700
+armor: 4
+hitSize: 10
+speed: 0.94
+rotateSpeed: 3
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: walkerStepTiny
+maxRange: 176
+stepShake: 0
+
+fogRadius: 22
+
+legCount: 6
+legLength: 10
+lockLegBase: true
+legContinuousMove: true
+legExtension: -2
+legGroupSize: 3
+legBaseOffset: 3
+legMaxLength: 1.25
+legMinLength: 0.1
+legLengthScl: 0.94
+legForwardScl: 1.15
+legStraightness: 0.2
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: false
+shadowElevation: 0.12
+groundLayer: 79
+
+researchCostMultiplier: 0
+research: rocket-fabricator
+
+weapons: [
+{
+    name: sway-weapon
+    x: 0
+    y: 1.5
+    mirror: false
+    rotate: true
+    rotateSpeed: 4
+    reload: 60
+    recoil: 1
+    cooldownTime: 42
+    shootCone: 2.5
+    shootSound: shootSway
+    shootY: 1
+    shootStatus: slow
+    shootStatusDuration: 80
+
+bullet: {
+    type: BasicBulletType
+    sprite: missile
+    shrinkY: 0.1
+    shrinkX: -0.05
+    rangeOverride: 176
+    keepVelocity: false
+    lifetime: 55
+    speed: 3.2
+    followAimSpeed: 3
+    damage: 5
+    splashDamage: 21.5
+    splashDamageRadius: 26
+    height: 12
+    width: 8
+    hitSound: explosion
+    despawnSound: explosion
+    hitEffect: [ hitSquaresColor, colorSpark,
+    {
+    type: WaveEffect
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 2.5
+    strokeTo: 0
+    lifetime: 12
+}
+    {
+    type: WaveEffect
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 2.5
+    strokeTo: 0
+    lifetime: 12
+    sides: 4
+}
+    ]
+    despawnEffect: [ hitSquaresColor, colorSpark,
+    {
+    type: WaveEffect
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 2.5
+    strokeTo: 0
+    lifetime: 24
+}
+    {
+    type: WaveEffect
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 2.5
+    strokeTo: 0
+    lifetime: 24
+    sides: 3
+    rotation: -15
+}
+    ]
+    frontColor: FFFFFF
+    backColor: E8F1F4
+    hitColor: E8F1F4
+    trailColor: 7390A6
+    shootEffect: [ shootBigColor
+{
+    type: WaveEffect
+    colorFrom: E8F1F4
+    colorTo: 7390A6
+    sizeFrom: 0
+    sizeTo: 12
+    strokeFrom: 1
+    strokeTo: 0
+    lifetime: 12
+    }
+]
+    smokeEffect: {
+    type: ParticleEffect
+    particles: 16
+    length: 24
+    cone: 25
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    interp: pow3Out
+    sizeInterp: smooth
+    sizeFrom: 3.5
+    sizeTo: 0
+    lifetime: 18
+}
+    trailLength: 12
+    trailWidth: 3.5
+    trailInterp: slope
+    trailEffect: {
+    type: ParticleEffect
+    particles: 4
+    length: 8
+    colorFrom: E8F1F4
+    colorTo: E8F1F4
+    interp: pow3Out
+    sizeInterp: smooth
+    sizeFrom: 2
+    sizeTo: 0
+    lifetime: 6
+}
+    trailInterval: 6
+}
+}
+]

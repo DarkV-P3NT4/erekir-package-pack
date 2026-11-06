@@ -1,0 +1,145 @@
+type: mech
+template: ErekirUnitType
+name: "Nidus"
+description: "Shoots spread of bullets at enemy targets, Constructs a stationary pad on its location."
+
+health: 640
+armor: 4
+hitSize: 11
+speed: 0.7
+rotateSpeed: 3.5
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: mechStepSmall
+range: 136
+maxRange: 136
+
+fogRadius: 17
+
+researchCostMultiplier: 0
+research: spawn-fabricator
+
+weapons: [
+{
+    name: nidus-weapon
+    x: 9
+    y: 0.75
+    top: false
+    mirror: true
+    rotate: false
+    reload: 34
+    recoil: 1.5
+    cooldownTime: 40
+    shootCone: 15
+    shootSound: shoot
+    soundPitchMin: 0.6
+    soundPitchMax: 1
+    shootY: 4
+    inaccuracy: 12
+    heatColor: BCA0FF
+    velocityRnd: 0.1
+    lifeRnd: 0.15
+
+shoot: {
+    type: ShootSpread
+    spread: 0.5
+    shots: 6
+    shotDelay: 1
+}
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 136
+    width: 9
+    height: 12
+    shrinkY: 0.2
+    damage: 6
+    speed: 6.4
+    lifetime: 21.25
+    frontColor: FFFFFF
+    backColor: BCA0FF
+    hitColor: BCA0FF
+    trailColor: 7C56A5
+    trailLength: 8
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    shootEffect: shootSmallColor
+    smokeEffect: shootSmokeSquare
+}
+}
+{
+    x: 0
+    y: -2.5
+    shootY: -2.5
+    chargeSound: placingPad
+    shootSound: blockPlace1
+    shootCone: 361
+    reload: 3600
+    recoil: 0
+    controllable: false
+    autoTarget: true
+    mirror: false
+    rotate: false
+    useAttackRange: false
+    shootStatus: slow
+    shootStatusDuration: 90
+    soundPitchMin: 0.8
+    soundPitchMax: 0.95
+
+shoot: {
+    firstShotDelay: 90
+}
+
+bullet: {
+    instantDisappear: true
+    rangeOverride: 260
+    speed: 0
+    spawnUnit: summoning-pad-tier1
+    shootEffect: [
+{
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 16
+    sizeTo: 12
+    strokeFrom: 4.5
+    strokeTo: 0
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    interp: pow2In
+    lifetime: 30
+}
+{
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 2
+    sizeTo: 22
+    strokeFrom: 10
+    strokeTo: 0
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    lifetime: 6
+}
+]
+    smokeEffect: none
+    chargeEffect: {
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 48
+    sizeTo: 14
+    strokeFrom: 3
+    strokeTo: 1
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    interp: exp5Out
+    lifetime: 90
+}
+}
+}
+]

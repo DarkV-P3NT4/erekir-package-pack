@@ -1,0 +1,176 @@
+type: legs
+template: ErekirUnitType
+name: "Alveus"
+description: "Fires thin lasers at enemy targets, Constructs a stationary pad on its location."
+
+health: 3000
+armor: 6
+hitSize: 22
+speed: 0.7
+rotateSpeed: 2.75
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: walkerStepSmall
+maxRange: 160
+stepShake: 1
+
+legCount: 4
+legLength: 24
+lockLegBase: true
+legContinuousMove: true
+legExtension: -2
+legBaseOffset: 11.5
+legMaxLength: 1.3
+legMinLength: 0.5
+legLengthScl: 0.95
+legForwardScl: 1.1
+legStraightness: 0.25
+
+allowLegStep: true
+hovering: true
+shadowElevation: 0.25
+groundLayer: 79
+
+fogRadius: 20
+
+research: prime-refabricator
+
+weapons: [
+{
+    name: alveus-weapon
+    layerOffset: 0.001
+    x: 8.25
+    y: -6.25
+    mirror: true
+    rotate: true
+    rotateSpeed: 3.5
+    reload: 30
+    recoil: 1
+    shootCone: 2
+    shootSound: shootAlveus
+    shootSoundVolume: 0.9
+    shootY: 3.5
+
+bullet: {
+    type: LaserBulletType
+    hitColor: BCA0FF
+    hitEffect: hitBulletColor
+    pierceCap: 1
+    damage: 36
+    shootEffect: [ sparkShoot, shootBigColor ]
+    smokeEffect: shootSmokeDisperse
+    length: 160
+    width: 6
+    sideLength: 24
+    sideWidth: 6
+    sideAngle: 90
+    colors: [ 7C56A5, BCA0FF, FFFFFF ]
+}
+}
+{
+    name: alveus-weapon
+    layerOffset: 0.001
+    x: 8.25
+    y: 4.5
+    mirror: true
+    rotate: true
+    rotateSpeed: 3.5
+    reload: 37.5
+    recoil: 1
+    shootCone: 2
+    shootSound: shootAlveus
+    shootSoundVolume: 0.9
+    shootY: 3.5
+
+bullet: {
+    type: LaserBulletType
+    hitColor: BCA0FF
+    hitEffect: hitBulletColor
+    pierceCap: 1
+    damage: 36
+    shootEffect: [ sparkShoot, shootBigColor ]
+    smokeEffect: shootSmokeDisperse
+    length: 160
+    width: 6
+    sideLength: 24
+    sideWidth: 1
+    sideAngle: 90
+    colors: [ 7C56A5, BCA0FF, FFFFFF ]
+}
+}
+{
+    x: 0
+    y: -5
+    shootY: -5
+    chargeSound: placingPad
+    shootSound: blockPlace2
+    shootCone: 361
+    reload: 4500
+    recoil: 0
+    controllable: false
+    autoTarget: true
+    mirror: false
+    rotate: false
+    useAttackRange: false
+    shootStatus: slow
+    shootStatusDuration: 90
+    soundPitchMin: 0.6
+    soundPitchMax: 0.8
+
+shoot: {
+    firstShotDelay: 110
+}
+
+bullet: {
+    instantDisappear: true
+    rangeOverride: 320
+    speed: 0
+    spawnUnit: summoning-pad-tier3
+    shootEffect: [
+{
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 26
+    sizeTo: 18
+    strokeFrom: 5
+    strokeTo: 0
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    interp: pow2In
+    lifetime: 30
+}
+{
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 2
+    sizeTo: 22
+    strokeFrom: 12
+    strokeTo: 0
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    lifetime: 12
+}
+]
+    smokeEffect: none
+    chargeEffect: {
+    type: WaveEffect
+    sides: 4
+    rotation: 45
+    sizeFrom: 64
+    sizeTo: 20
+    strokeFrom: 6
+    strokeTo: 3
+    colorFrom: BCA0FF
+    colorTo: BCA0FF
+    interp: exp5Out
+    lifetime: 110
+}
+}
+}
+]

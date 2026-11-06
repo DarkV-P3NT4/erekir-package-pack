@@ -1,0 +1,152 @@
+type: hover
+template: ErekirUnitType
+name: "Wisp"
+description: "Targets incoming projectiles to intercept down, Becomes a spirit after death."
+
+health: 580
+armor: 1
+hitSize: 10
+speed: 1.5
+rotateSpeed: 3.5
+faceTarget: true
+targetAir: true
+targetGround: true
+drag: 0.07
+accel: 0.09
+outlineColor: 2D2D37
+itemCapacity: 0
+
+stepSound: none
+moveSound: loopExtract
+moveSoundVolume: 0.7
+moveSoundPitchMin: 0.75
+moveSoundPitchMax: 1.5
+
+hovering: true
+canDrown: false
+shadowElevation: 0.11
+engineSize: 2
+engineOffset: 7
+useEngineElevation: false
+
+researchCostMultiplier: 0
+research: intercept-fabricator
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: missileTrailShort
+    x: 0
+    y: -7
+    interval: 3
+    minVelocity: 0.1
+  }
+]
+
+parts: [
+{
+    type: HoverPart
+    color: F9A6D1
+    radius: 6
+    sides: 4
+    layerOffset: -0.001
+    mirror: true
+    x: 3.5
+    y: 3.5
+    phase: 60
+    stroke: 2
+    }
+{
+    type: HoverPart
+    color: F9A6D1
+    radius: 6
+    sides: 4
+    layerOffset: -0.001
+    mirror: true
+    x: 3.5
+    y: -3
+    phase: 60
+    stroke: 2
+    }
+]
+
+weapons: [
+{
+    name: wisp-weapon
+    type: PointDefenseWeapon
+    mirror: true
+    x: 4.5
+    y: -1.75
+    reload: 32
+    shootSound: shoot
+    rotate: true
+
+bullet: {
+    maxRange: 116
+    damage: 20
+    shootEffect: sparkShoot
+    hitEffect: pointHit
+}
+}
+{
+    x: 0
+    y: 0
+    controllable: false
+    aiControllable: false
+    mirror: false
+    reload: 1
+    shootOnDeath: true
+    shootCone: 180
+    
+bullet: {
+    type: ExplosionBulletType
+    speed: 0
+    damage: 0
+    instantDisappear: true
+    hitEffect: none
+    despawnEffect: none
+    shootEffect: none
+    smokeEffect: none
+    fragBullets: 1
+    fragVelocityMin: 1
+
+fragBullet: {
+    type: BasicBulletType
+    instantDisappear: false
+    killShooter: true
+    sprite: "dvep-wisp-full"
+    width: 11
+    height: 11
+    shrinkY: 0
+    weaveMag: 6
+    weaveScale: 6
+    damage: 30
+    hittable: false
+    reflectable: false
+    absorbable: true
+    frontColor: FFFFFF
+    backColor: F9A6D1
+    trailColor: AA5F80
+    hitColor: F9A6D1
+    trailLength: 24
+    trailWidth: 3
+    collidesTiles: false
+    status: slow
+    statusDuration: 600
+    shootEffect: none
+    smokeEffect: none
+    speed: 0.5
+    drag: -0.005
+    lifetime: 360
+    homingPower: 0.1
+    homingRange: 1800
+    homingDelay: 60
+    hitSound: unitExplode2
+    despawnSound: explosionCrawler
+    hitEffect: [ scatheSlash, hitSquaresColor, squareWaveEffect, artilleryTrailSmoke ]
+    despawnEffect: [ hitBulletColor, massiveExplosion ]
+}
+}
+}
+]

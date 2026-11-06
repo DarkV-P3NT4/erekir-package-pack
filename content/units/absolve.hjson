@@ -1,0 +1,170 @@
+type: flying
+template: ErekirUnitType
+name: "Absolve"
+description: "Fires spreads of flak at enemy air targets, Repairs structures and allies with a repair field."
+
+health: 2100
+armor: 6
+hitSize: 21
+outlineColor: 2D2D37
+speed: 1.8
+itemCapacity: 0
+drag: 0.1
+accel: 0.09
+rotateSpeed: 3.5
+engineSize: 3.5
+engineOffset: 12
+wobble: true
+flying: true
+hovering: true
+lowAltitude: false
+range: 196
+maxRange: 196
+fogRadius: 15
+targetGround: false
+
+research: prime-refabricator
+
+abilities: [
+  {
+    type: EnergyFieldAbility
+    hitBuildings: true
+    hitUnits: true
+    reload: 30
+    color: C3FFB2
+    damage: 0
+    healPercent: 0.5
+    sameTypeHealMult: 0.05
+    status: none
+    range: 132
+    rotateSpeed: 1
+    sectors: 3
+    healEffect: none
+    damageEffect: none
+    maxTargets: 8
+    hitEffect: none
+    shootSound: healWave
+  }
+]
+
+engines: [
+{
+    x: 10
+    y: -11.5
+    radius: 3
+    rotation: -45
+}
+{
+    x: -10
+    y: -11.5
+    radius: 3
+    rotation: -135
+}
+]
+
+weapons: [
+{
+    name: redress-weapon
+    layerOffset: -0.001
+    x: 9.25
+    y: 2.75
+    rotate: true
+    mirror: true
+    rotateSpeed: 1.5
+    rotationLimit: 75
+    alternate: false
+    reload: 15
+    shootSound: shootAbsolve
+    inaccuracy: 12
+    velocityRnd: 0.11
+
+shoot: {
+    shots: 6
+}
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 196
+    sprite: mine-bullet
+    backSprite: large-bomb-back
+    collidesGround: false
+    collidesTiles: false
+    width: 16
+    height: 16
+    shrinkY: 0.3
+    damage: 22.5
+    speed: 5.6
+    lifetime: 35
+    armorMultiplier: 2
+    frontColor: FFFFFF
+    backColor: C3FFB2
+    hitColor: C3FFB2
+    trailColor: 519371
+    trailLength: 12
+    trailWidth: 1
+    trailChance: 0.44
+    rotationOffset: 90
+    trailEffect: disperseTrail
+    trailRotation: true
+    homingPower: 0.06
+    homingDelay: 5
+    shootEffect: shootBigColor
+    smokeEffect: shootSmokeDisperse
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+}
+}
+{
+    name: redress-weapon
+    layerOffset: -0.001
+    x: 11
+    y: -7
+    rotate: false
+    mirror: true
+    alternate: false
+    reload: 15
+    shootSound: shootAbsolve
+    inaccuracy: 12
+    velocityRnd: 0.11
+    shootCone: 10
+    baseRotation: -135
+    controllable: false
+    autoTarget: true
+
+shoot: {
+    shots: 6
+}
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 196
+    sprite: mine-bullet
+    backSprite: large-bomb-back
+    collidesGround: false
+    collidesTiles: false
+    width: 16
+    height: 16
+    shrinkY: 0.3
+    damage: 22.5
+    speed: 5.6
+    lifetime: 35
+    armorMultiplier: 1
+    frontColor: FFFFFF
+    backColor: C3FFB2
+    hitColor: C3FFB2
+    trailColor: 519371
+    trailLength: 12
+    trailWidth: 1
+    trailChance: 0.44
+    rotationOffset: 90
+    trailEffect: disperseTrail
+    trailRotation: true
+    homingPower: 0.06
+    homingDelay: 5
+    shootEffect: shootBigColor
+    smokeEffect: shootSmokeDisperse
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+}
+}
+]

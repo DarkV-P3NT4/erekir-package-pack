@@ -1,0 +1,98 @@
+type: legs
+template: ErekirUnitType
+name: "Swivel"
+description: "Fires armored missiles at enemy targets, missiles can be shot down, Can step over most terrain."
+
+health: 1250
+armor: 6
+hitSize: 16
+speed: 0.6
+rotateSpeed: 2.85
+faceTarget: true
+targetAir: true
+targetGround: true
+outlineColor: 2D2D37
+mechLegColor: 2D2D37
+itemCapacity: 0
+stepSound: walkerStepSmall
+maxRange: 220
+stepShake: 1
+
+legCount: 6
+legLength: 15
+lockLegBase: true
+legContinuousMove: true
+legExtension: -2.5
+legGroupSize: 3
+legBaseOffset: 5
+legMaxLength: 1.25
+legMinLength: 0.5
+legLengthScl: 0.97
+legForwardScl: 1.1
+legStraightness: 0.25
+
+allowLegStep: true
+hovering: true
+shadowElevation: 0.2
+groundLayer: 79
+
+alwaysShootWhenMoving: true
+
+fogRadius: 27.5
+
+researchCostMultiplier: 0
+research: rocket-refabricator
+
+weapons: [
+{
+    name: swivel-weapon
+    layerOffset: 0.001
+    x: 0
+    y: -2.75
+    mirror: false
+    rotate: true
+    rotateSpeed: 2
+    reload: 115
+    recoil: 1
+    cooldownTime: 82
+    shootCone: 2.5
+    shootSound: shootSwivel
+    shootSoundVolume: 0.65
+    shootY: 0
+    shootStatus: slow
+    shootStatusDuration: 150
+    inaccuracy: 20
+    minWarmup: 0.92
+    shootWarmupSpeed: 0.07
+    heatColor: F25555
+
+shoot: {
+    shotDelay: 12
+    shots: 3
+}
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-blade"
+    mirror: true
+    progress: recoil
+    moveX: 0.5
+    moveRot: -12
+}
+]
+
+bullet: {
+    instantDisappear: true
+    rangeOverride: 220
+    keepVelocity: false
+    speed: 0
+    spawnUnit: swivel-missile
+    shootEffect: [ shootBigColor, artilleryTrailSmoke ]
+    smokeEffect: shootSmokeTitan
+    hitColor: E8F1F4
+    despawnEffect: none
+    hitEffect: none
+}
+}
+]
